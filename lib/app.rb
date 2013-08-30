@@ -16,7 +16,11 @@ class App < Sinatra::Base
   end
 
   get '/' do
-    @command_result = `ipvsadm -Ln`
+    command = 'ipvsadm -Ln'
+    @command_result = `#{command}`
+
+    @refresh_seconds = 4 #(秒)
+
     erb :status
   end
 end
