@@ -6,7 +6,7 @@ class App < Sinatra::Base
     set :root, File.expand_path('../../', __FILE__)
 
     use Rack::Auth::Basic do |username, password|
-      username == ENV['BASIC_AUTH_USERNAME'] && password == ['BASIC_AUTH_PASSWORD']
+      username == ENV['BASIC_AUTH_USERNAME'] && password == ENV['BASIC_AUTH_PASSWORD']
     end
   end
 
