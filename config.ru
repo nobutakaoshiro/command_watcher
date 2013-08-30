@@ -3,4 +3,6 @@ require 'bundler'
 Bundler.require
 
 require 'app'
-run App
+map '/status' do
+  run App
+end

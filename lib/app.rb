@@ -1,6 +1,4 @@
 # -*- encoding: utf-8 -*-
-require 'base64'
-
 class App < Sinatra::Base
   configure do
     set :root, File.expand_path('../../', __FILE__)
